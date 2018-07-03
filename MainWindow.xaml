@@ -1,0 +1,34 @@
+﻿<Window x:Class="Curse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Curse"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460.117" Width="865.999">
+    <Grid>
+        <ListView x:Name="table" HorizontalAlignment="Left" Height="355" Margin="0,62,0,0" VerticalAlignment="Top" Width="600" GridViewColumnHeader.Click="Sort">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="150" Header="№" DisplayMemberBinding="{Binding Path=Id}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Модель" DisplayMemberBinding="{Binding Path=Model}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Цена"  DisplayMemberBinding="{Binding Path=Price, StringFormat={}{0:C}}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Количество" DisplayMemberBinding="{Binding Path=Count}"></GridViewColumn>
+
+                    </GridView.Columns>
+
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="debug" HorizontalAlignment="Left" Margin="10,457,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="899" Height="173"/>
+        <Button x:Name="button1" Content="Удалить выбранные" HorizontalAlignment="Left" Margin="703,135,0,0" VerticalAlignment="Top" Width="126" Click="DeleteSelected"/>
+        <Button x:Name="button2" Content="Добавить запись" HorizontalAlignment="Left" Margin="703,62,0,0" VerticalAlignment="Top" Width="126" Click="AddRow"/>
+        <Button x:Name="button4" Content="Редактировать запись" HorizontalAlignment="Left" Margin="703,98,0,0" VerticalAlignment="Top" Width="126" Click="EditRow"/>
+        <Button x:Name="button" Content="Поиск" HorizontalAlignment="Left" Margin="703,170,0,0" VerticalAlignment="Top" Width="126" Click="Search"/>
+        <Button x:Name="button3" Content="Открыть файл" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-2.827,0.5" Height="21" Click="OpenFile"/>
+        <Button x:Name="button5" Content="Сохранить таблицу" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="122" Height="21" Click="SaveFile"/>
+
+    </Grid>
+</Window>
